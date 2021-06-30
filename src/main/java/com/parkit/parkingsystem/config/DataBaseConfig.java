@@ -13,7 +13,13 @@ public class DataBaseConfig {
         logger.info("Create DB connection");
         Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/prod","root","rootroot");
+                "jdbc:mysql://localhost:3306/prod?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false","root","0402080087");
+    }
+    public Connection getTestConnection() throws ClassNotFoundException, SQLException {
+        logger.info("Create DB connection");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        return DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false","root","0402080087");
     }
 
     public void closeConnection(Connection con){
