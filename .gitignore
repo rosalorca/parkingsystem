@@ -1,2 +1,7 @@
-/target/
-/bin/
+*.class
+.project
+.classpath
+.settings/
+/target
+/bin
+/resources
